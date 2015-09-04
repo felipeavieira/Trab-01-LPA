@@ -1,14 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
-struct pares {int npares; int fp; int lp};
-void pares(int *v, n)
+struct cpares {int fp; int lp};
+struct cpares pares(int *v, int n)
 {
     int dif, i, mdif, f, l;
-    dif = abs(v[1]-v[0])
-    for (i=0; i<n; i++)
+    f=v[0];
+    l=v[1];
+    dif = v[1]-v[0];
+    for (i=1; i<n-1; i++)
     {
-
+        if ((v[i+1]-v[i])<dif)
+        {
+            dif=v[i+1]-v[i];
+            f=v[i];
+            l=v[i+1];
+        }
     }
+    struct cpares p;
+    p.fp=f;
+    p.lp=l;
+    return p;
 }
 void troca(int *v, int a, int b)
 {
@@ -58,4 +69,7 @@ void main()
         scanf("%d",&v[i]);
     }
     quicksort(v,0,n-1);
+    struct cpares p;
+    p=pares(v,n);
+    printf("A menor diferenca entre dois numeros foi de %d entre o %d e o %d.",(p.lp-p.fp),p.fp,p.lp);
 }
