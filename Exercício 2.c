@@ -61,29 +61,16 @@ void unicos (int*v,int n)
     struct elementos *lista = NULL;
     for (i=0;i<n;i++)
     {
-        if (i==n-1)
-        {
-            if (v[i]=!v[i-1])
+        if(i==(n-1)&&v[i]!=v[i-1])
             {
                 add(v[i],lista);
                 cont++;
             }
-        }
-        else
-        {
-            if (v[i]!=v[i+1])
-            {
+        if(i!=(n-1)&&v[i]!=v[i+1])
+           {
                 add(v[i],lista);
                 cont++;
-            }
-            else
-            {
-                while (v[i]==v[i+1]&&i<n-2)
-                {
-                    i++;
-                }
-            }
-        }
+           }
     }
     if (cont==0)
     {
