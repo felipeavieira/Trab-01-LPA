@@ -37,22 +37,22 @@ void quicksort (int *v,int f, int l)// funÁ„o com o algorismo de ordenaÁ„o quick
     quicksort(v,f,j-1);
     quicksort(v,j+1,l);
 }
-void add (int i,struct elementos* q)
+struct elementos* add (int i,struct elementos* q)
 {
     struct elementos *novo = (struct elementos*)malloc(sizeof(struct elementos));
     novo->num=i;
     novo->prox=q;
-    q=novo;
+    return novo;
 }
 void printnfree(struct elementos* w)
 {
     struct elementos *temp;
-    while (w=!NULL)
+    while (w!=NULL)
     {
-        printf("%d ", w->num);
-        temp=w;
-        w=w->prox;
-        free(temp);
+        printf("%d\t", w->num);
+        temp=w->prox;
+        free(w);
+        w=temp;
     }
 }
 void unicos (int*v,int n)
@@ -61,41 +61,33 @@ void unicos (int*v,int n)
     struct elementos *lista = NULL;
     for (i=0;i<n-1;i++)
     {
-<<<<<<< HEAD
-        if(i==(n-1)&&v[i]!=v[i-1])
-            {
-                add(v[i],lista);
-                cont++;
-            }
-        if(i!=(n-1)&&v[i]!=v[i+1])
-           {
-                add(v[i],lista);
-                cont++;
-           }
-=======
         if (v[i]!=v[i+1])
         {
-            add(v[i],lista);
+            lista=add(v[i],lista);
             cont++;
         }
         else
         {
-            while (v[i]==v[i+1])
+            while (v[i]==v[i+1]&&i!=n-2)
             {
                 i++;
             }
         }
->>>>>>> parent of 034f4d3... Vers√£o 0.3.1
-    }
-    if (cont==0)
-    {
-        printf("Nao foram encontrados valores com somente uma ocorrencia");
-    }
-    else
-    {
-        printf("Foram encontrados %d numeros com uma ocorrencia, eles sao: ");
-        printnfree(lista);
-    }
+   }
+   if (v[i]!=v[i-1])//teste especifico para o ultimo da lista
+        {
+            lista=add(v[i],lista);
+            cont++;
+        }
+   if (cont==0)
+   {
+       printf("Nao foram encontrados valores com somente uma ocorrencia");
+   }
+   else
+   {
+       printf("Foram encontrados %d numeros com uma ocorrencia, eles sao:\t",cont);
+       printnfree(lista);
+   }
 }
 void main()
 {
