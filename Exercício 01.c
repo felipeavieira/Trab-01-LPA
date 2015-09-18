@@ -1,33 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-struct cpares {int fp; int lp};
-struct cpares pares(int *v, int n)
-{
-    int dif, i, mdif, f, l;
-    f=v[0];
-    l=v[1];
-    dif = v[1]-v[0];
-    for (i=1; i<n-1; i++)
-    {
-        if ((v[i+1]-v[i])<dif)
-        {
-            dif=v[i+1]-v[i];
-            f=v[i];
-            l=v[i+1];
-        }
-    }
-    struct cpares p;
-    p.fp=f;
-    p.lp=l;
-    return p;
-}
-void troca(int *v, int a, int b)
+void troca(int *v, int a, int b)//função de troca que será usada no quicksort
 {
     int temp=v[a];
     v[a]=v[b];
     v[b]=temp;
 }
-void quicksort (int *v,int f, int l)
+void quicksort (int *v,int f, int l)// função com o algorismo de ordenação quicksort
 {
     if(f>=l)
     {
@@ -57,19 +36,37 @@ void quicksort (int *v,int f, int l)
     quicksort(v,f,j-1);
     quicksort(v,j+1,l);
 }
+void pares(int *v, int n) /*A função pares servirá para comparar os pares de números inseridos,
+para encontrar a menor diferença entre dois, para então mostra-los, junto com a diferença*/
+{
+    int dif, i, f, l;
+    f=v[0];
+    l=v[1];
+    dif = v[1]-v[0];
+    for (i=1; i<n-1&&dif>0; i++)/*Esse for irá comparar valores até o final ou até achar dois valores iguais,
+    que são a menor diferença possível*/
+    {
+        if ((v[i+1]-v[i])<dif)
+        {
+            dif=v[i+1]-v[i];
+            f=v[i];
+            l=v[i+1];
+        }
+    }
+    printf("A menor diferenca entre dois numeros foi de %d entre o %d e o %d.",dif, f,l);
+}
 void main()
 {
     int *v,n,i;
     printf("Ola, quantos valores voce pretende entrar? ");
     scanf("%d",&n);
-    v=calloc(n,sizeof(int));
-    for(i=0;i<n;i++)
+    v=calloc(n,sizeof(int));//alocação dinâmica para preencher v com quantos números for preciso
+    for(i=0;i<n;i++)//preenchimento de v
     {
         printf("Entre com um numero para a posicao %d: ",i);
         scanf("%d",&v[i]);
     }
     quicksort(v,0,n-1);
-    struct cpares p;
-    p=pares(v,n);
-    printf("A menor diferenca entre dois numeros foi de %d entre o %d e o %d.",(p.lp-p.fp),p.fp,p.lp);
+    pares(v,n);
+    free(v);
 }
