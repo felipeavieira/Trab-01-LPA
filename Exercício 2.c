@@ -59,18 +59,29 @@ void unicos (int*v,int n)
 {
     int cont = 0,i;
     struct elementos *lista = NULL;
-    for (i=0;i<n-1;i++)
+    for (i=0;i<n;i++)
     {
-        if (v[i]!=v[i+1])
+        if (i==n-1)
         {
-            add(v[i],lista);
-            cont++;
+            if (v[i]=!v[i-1])
+            {
+                add(v[i],lista);
+                cont++;
+            }
         }
         else
         {
-            while (v[i]==v[i+1])
+            if (v[i]!=v[i+1])
             {
-                i++;
+                add(v[i],lista);
+                cont++;
+            }
+            else
+            {
+                while (v[i]==v[i+1]&&i<n-2)
+                {
+                    i++;
+                }
             }
         }
     }
@@ -80,7 +91,7 @@ void unicos (int*v,int n)
     }
     else
     {
-        printf("Foram encontrados %d numeros com uma ocorrencia, eles sao: ");
+        printf("Foram encontrados %d numeros com uma ocorrencia, eles sao: ", cont);
         printnfree(lista);
     }
 }
