@@ -59,8 +59,9 @@ void unicos (int*v,int n)
 {
     int cont = 0,i;
     struct elementos *lista = NULL;
-    for (i=0;i<n;i++)
+    for (i=0;i<n-1;i++)
     {
+<<<<<<< HEAD
         if(i==(n-1)&&v[i]!=v[i-1])
             {
                 add(v[i],lista);
@@ -71,6 +72,20 @@ void unicos (int*v,int n)
                 add(v[i],lista);
                 cont++;
            }
+=======
+        if (v[i]!=v[i+1])
+        {
+            add(v[i],lista);
+            cont++;
+        }
+        else
+        {
+            while (v[i]==v[i+1])
+            {
+                i++;
+            }
+        }
+>>>>>>> parent of 034f4d3... Versão 0.3.1
     }
     if (cont==0)
     {
@@ -78,7 +93,7 @@ void unicos (int*v,int n)
     }
     else
     {
-        printf("Foram encontrados %d numeros com uma ocorrencia, eles sao: ", cont);
+        printf("Foram encontrados %d numeros com uma ocorrencia, eles sao: ");
         printnfree(lista);
     }
 }
