@@ -7,7 +7,7 @@ void troca (int* v, int a, int b)
     v[a]=v[b];
     v[b]=temp;
 }
-void quicksort (int *v,int f, int l)// função com o algorismo de ordenação quicksort
+void quicksort (int *v,int f, int l)// funcao com o algorismo de ordenacao quicksort
 {
     if(f>=l)
     {
@@ -44,7 +44,7 @@ struct elementos* add (int i,struct elementos* q)
     novo->prox=q;
     return novo;
 }
-void printnfree(struct elementos* w)
+void printnfree(struct elementos* w)//funcao que sera usada para imprimir valores e liberar a memoria que havia sido alocada
 {
     struct elementos *temp;
     while (w!=NULL)
@@ -85,7 +85,7 @@ void unicos (int*v,int n)
    }
    else
    {
-       printf("Foram encontrados %d numeros com uma ocorrencia, eles sao:\t",cont);
+       printf("Foram encontrados %d numeros com apenas uma ocorrencia, eles sao:\t",cont);
        printnfree(lista);
    }
 }
@@ -94,7 +94,7 @@ void main()
     int *v,n,i;
     printf("Ola, quantos valores voce pretende entrar? ");
     scanf("%d",&n);
-    v=calloc(n,sizeof(int));//alocação dinâmica para preencher v com quantos números for preciso
+    v=calloc(n,sizeof(int));//alocacao dinamica para preencher v com quantos numeros for preciso
     for(i=0;i<n;i++)//preenchimento de v
     {
         printf("Entre com um numero para a posicao %d: ",i);

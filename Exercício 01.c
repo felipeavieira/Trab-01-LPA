@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-void troca(int *v, int a, int b)//função de troca que será usada no quicksort
+void troca(int *v, int a, int b)//funcao de troca que sera usada no quicksort
 {
     int temp=v[a];
     v[a]=v[b];
     v[b]=temp;
 }
-void quicksort (int *v,int f, int l)// função com o algorismo de ordenação quicksort
+void quicksort (int *v,int f, int l)// funcao com o algorismo de ordenacao quicksort
 {
     if(f>=l)
     {
@@ -36,15 +36,14 @@ void quicksort (int *v,int f, int l)// função com o algorismo de ordenação quick
     quicksort(v,f,j-1);
     quicksort(v,j+1,l);
 }
-void pares(int *v, int n) /*A função pares servirá para comparar os pares de números inseridos,
-para encontrar a menor diferença entre dois, para então mostra-los, junto com a diferença*/
+void pares(int *v, int n) //Compara, encontra menor diferenca e imprime-a
 {
     int dif, i, f, l;
     f=v[0];
     l=v[1];
     dif = v[1]-v[0];
-    for (i=1; i<n-1&&dif>0; i++)/*Esse for irá comparar valores até o final ou até achar dois valores iguais,
-    que são a menor diferença possível*/
+    for (i=1; i<n-1&&dif>0; i++)/*Esse "for" ira comparar valores ate o final ou ate achar dois valores iguais,
+    que sao a menor diferenca possivel*/
     {
         if ((v[i+1]-v[i])<dif)
         {
@@ -60,7 +59,7 @@ void main()
     int *v,n,i;
     printf("Ola, quantos valores voce pretende entrar? ");
     scanf("%d",&n);
-    v=calloc(n,sizeof(int));//alocação dinâmica para preencher v com quantos números for preciso
+    v=calloc(n,sizeof(int));//alocação dinamica para preencher v com quantos numeros for preciso
     for(i=0;i<n;i++)//preenchimento de v
     {
         printf("Entre com um numero para a posicao %d: ",i);
