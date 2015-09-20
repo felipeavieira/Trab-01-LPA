@@ -1,18 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 struct elementos {int num; struct elementos* prox};
-void troca (int* v, int a, int b)
+void troca (int* v, int a, int b)//Funcao de troca para o quicksort.
 {
     int temp = v[a];
     v[a]=v[b];
     v[b]=temp;
 }
-void quicksort (int *v,int f, int l)// funcao com o algorismo de ordenacao quicksort
+void quicksort (int *v,int f, int l)//Funcao com o algoritmo de ordenacao quicksort.
 {
-    if(f>=l)
-    {
-        return;
-    }
+    if(f>=l) return;
     int p=rand()%(l-f+1)+f;
     troca(v,p,f);
     p=f;
@@ -20,24 +17,15 @@ void quicksort (int *v,int f, int l)// funcao com o algorismo de ordenacao quick
     int j=l;
     while(i<j)
     {
-        while (v[i]<=v[p]&&i<=l)
-        {
-            i++;
-        }
-        while (v[j]>v[p])
-        {
-            j--;
-        }
-        if (j>i)
-        {
-            troca(v,i,j);
-        }
+        while (v[i]<=v[p]&&i<=l) i++;
+        while (v[j]>v[p]) j--;
+        if (j>i) troca(v,i,j);
     }
     troca(v,j,p);
     quicksort(v,f,j-1);
     quicksort(v,j+1,l);
 }
-struct elementos* add (int i,struct elementos* s)
+struct elementos* add (int i,struct elementos* s)// funcao para adicionar numeros a lista de elementos unicos
 {
     struct elementos *novo = (struct elementos*)malloc(sizeof(struct elementos));
     novo->num=i;
@@ -49,17 +37,17 @@ void printnfree(struct elementos* s)//funcao que sera usada para imprimir valore
     struct elementos *temp;
     while (s!=NULL)
     {
-        printf("%d\t", s->num);
+        printf("%d\n", s->num);
         temp=s->prox;
         free(s);
         s=temp;
     }
 }
-void unicos (int*v,int n)
+void unicos (int*v,int n)// funcao que testa a unicidade de elementos, gera uma lista com eles e chama funcao para imprimi-los.
 {
     int cont = 0,i;
     struct elementos *lista = NULL;
-    for (i=0;i<n-1;i++)
+    for (i=0;i<n-1;i++)// teste de unicidade
     {
         if (v[i]!=v[i+1])
         {
@@ -68,10 +56,7 @@ void unicos (int*v,int n)
         }
         else
         {
-            while (v[i]==v[i+1]&&i!=n-2)
-            {
-                i++;
-            }
+            while (v[i]==v[i+1]&&i!=n-2) i++;
         }
    }
    if (v[i]!=v[i-1])//teste especifico para o ultimo da lista
@@ -79,13 +64,10 @@ void unicos (int*v,int n)
             lista=add(v[i],lista);
             cont++;
         }
-   if (cont==0)
-   {
-       printf("Nao foram encontrados valores com somente uma ocorrencia");
-   }
+   if (cont==0) printf("Nao foram encontrados valores com somente uma ocorrencia");
    else
    {
-       printf("Foram encontrados %d numeros com apenas uma ocorrencia, eles sao:\t",cont);
+       printf("Foram encontrados %d numeros com apenas uma ocorrencia, eles sao:\n",cont);
        printnfree(lista);
    }
 }
@@ -103,4 +85,5 @@ void main()
     quicksort(v,0,n-1);
     unicos(v,n);
     free(v);
+    getch();//Para segurar a tela.
 }

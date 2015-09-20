@@ -1,17 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
-void troca(int *v, int a, int b)//funcao de troca que sera usada no quicksort
+void troca(int *v, int a, int b)//funcao de troca que sera usada no quicksort.
 {
     int temp=v[a];
     v[a]=v[b];
     v[b]=temp;
 }
-void quicksort (int *v,int f, int l)// funcao com o algorismo de ordenacao quicksort
+void quicksort (int *v,int f, int l)// Funcao com o algoritmo de ordenacao quicksort.
 {
-    if(f>=l)
-    {
-        return;
-    }
+    if(f>=l) return;
     int p=rand()%(l-f+1)+f;
     troca(v,p,f);
     p=f;
@@ -19,31 +16,22 @@ void quicksort (int *v,int f, int l)// funcao com o algorismo de ordenacao quick
     int j=l;
     while(i<j)
     {
-        while (v[i]<=v[p]&&i<=l)
-        {
-            i++;
-        }
-        while (v[j]>v[p])
-        {
-            j--;
-        }
-        if (j>i)
-        {
-            troca(v,i,j);
-        }
+        while (v[i]<=v[p]&&i<=l) i++;
+        while (v[j]>v[p]) j--;
+        if (j>i) troca(v,i,j);
     }
     troca(v,j,p);
     quicksort(v,f,j-1);
     quicksort(v,j+1,l);
 }
-void pares(int *v, int n) //Compara, encontra menor diferenca e imprime-a
+void pares(int *v, int n) //Compara, encontra menor diferenca e imprime.
 {
     int dif, i, f, l;
     f=v[0];
     l=v[1];
     dif = v[1]-v[0];
-    for (i=1; i<n-1&&dif>0; i++)/*Esse "for" ira comparar valores ate o final ou ate achar dois valores iguais,
-    que sao a menor diferenca possivel*/
+    //Esse "for" ira comparar valores ate o final ou ate achar dois valores iguais,que sao a menor diferenca possivel
+    for (i=1; i<n-1&&dif>0; i++)
     {
         if ((v[i+1]-v[i])<dif)
         {
