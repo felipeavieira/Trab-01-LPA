@@ -37,7 +37,7 @@ void printnfree(struct elementos* s)//funcao que sera usada para imprimir valore
     struct elementos *temp;
     while (s!=NULL)
     {
-        printf("%d\n", s->num);
+        printf("%d\t", s->num);
         temp=s->prox;
         free(s);
         s=temp;
