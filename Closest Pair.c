@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-void troca(int *v, int a, int b)//funcao de troca que sera usada no quicksort.
+void troca(int *v, int a, int b)//Funcao de troca que sera usada no quicksort.
 {
     int temp=v[a];
     v[a]=v[b];
@@ -26,27 +26,33 @@ void quicksort (int *v,int f, int l)// Funcao com o algoritmo de ordenacao quick
 }
 void pares(int *v, int n) //Compara, encontra menor diferenca e imprime.
 {
-    int dif, i, f, l;
-    f=v[0];
-    l=v[1];
+    int dif, i;
     dif = v[1]-v[0];
-    //Esse "for" ira comparar valores ate o final ou ate achar dois valores iguais,que sao a menor diferenca possivel
+    //Esse "for" ira comparar diferenca de valores e parar ao chegar ao final ou achar dois numeros iguais.
     for (i=1; i<n-1&&dif>0; i++)
     {
         if ((v[i+1]-v[i])<dif)
         {
             dif=v[i+1]-v[i];
-            f=v[i];
-            l=v[i+1];
         }
     }
-    printf("A menor diferenca entre dois numeros foi de %d entre o %d e o %d.",dif, f,l);
+    printf("A menor diferenca entre dois numeros foi de %d entre os seguintes inteiros:\n",dif);
+    for (i=0;i<n-1;i++)
+    {
+        if (v[i+1]-v[i]==dif&&(v[i]!=v[i-1]||i==0)) printf("%d e %d\n",v[i],v[i+1]);
+        //imprime se tiver a menor diferenca, e nao deixa repetir valores em caso de varias entradas iguais.
+    }
 }
 void main()
 {
     int *v,n,i;
     printf("Ola, quantos valores voce pretende entrar? ");
     scanf("%d",&n);
+    if (n<2) // Para evitar comparacoes com vazio ou lixo
+    {
+        printf("Voce deve inserir pelo menos 2 numeros!");
+        return;
+    }
     v=calloc(n,sizeof(int));//alocação dinamica para preencher v com quantos numeros for preciso
     for(i=0;i<n;i++)//preenchimento de v
     {
@@ -56,4 +62,5 @@ void main()
     quicksort(v,0,n-1);
     pares(v,n);
     free(v);
+    getch();//Para segurar a tela.
 }
