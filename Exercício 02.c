@@ -37,22 +37,22 @@ void quicksort (int *v,int f, int l)// funcao com o algorismo de ordenacao quick
     quicksort(v,f,j-1);
     quicksort(v,j+1,l);
 }
-struct elementos* add (int i,struct elementos* q)
+struct elementos* add (int i,struct elementos* s)
 {
     struct elementos *novo = (struct elementos*)malloc(sizeof(struct elementos));
     novo->num=i;
-    novo->prox=q;
+    novo->prox=s;
     return novo;
 }
-void printnfree(struct elementos* w)//funcao que sera usada para imprimir valores e liberar a memoria que havia sido alocada
+void printnfree(struct elementos* s)//funcao que sera usada para imprimir valores e liberar a memoria que havia sido alocada
 {
     struct elementos *temp;
-    while (w!=NULL)
+    while (s!=NULL)
     {
-        printf("%d\t", w->num);
-        temp=w->prox;
-        free(w);
-        w=temp;
+        printf("%d\t", s->num);
+        temp=s->prox;
+        free(s);
+        s=temp;
     }
 }
 void unicos (int*v,int n)
