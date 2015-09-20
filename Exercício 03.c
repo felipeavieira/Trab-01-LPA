@@ -56,7 +56,7 @@ void printnfree2 (int j, struct reps*s)
         printf("%d\t", s->num);
         }
         temp=s->prox;
-        free(s);
+        free(s);//liberacao da lista
         s=temp;
     }
 }
