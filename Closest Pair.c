@@ -48,9 +48,10 @@ void main()
     int *v,n,i;
     printf("Ola, quantos valores voce pretende entrar? ");
     scanf("%d",&n);
-    if (n<2) // Para evitar comparacoes com vazio ou lixo
+    if (n<2) // Para evitar comparacoes com vazio ou lixo.
     {
         printf("Voce deve inserir pelo menos 2 numeros!");
+        getch(); //Para segurar a tela.
         return;
     }
     v=calloc(n,sizeof(int));//alocação dinamica para preencher v com quantos numeros for preciso

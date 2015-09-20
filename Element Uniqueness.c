@@ -76,6 +76,12 @@ void main()
     int *v,n,i;
     printf("Ola, quantos valores voce pretende entrar? ");
     scanf("%d",&n);
+    if (n<1)//Para evitar comparacoes com o vazio ou lixo.
+    {
+        printf("Voce deve entrar com pelo menos um numero!");
+        getch();//Para segurar a tela.
+        return;
+    }
     v=calloc(n,sizeof(int));//alocacao dinamica para preencher v com quantos numeros for preciso
     for(i=0;i<n;i++)//preenchimento de v
     {

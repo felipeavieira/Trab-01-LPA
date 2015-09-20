@@ -46,6 +46,12 @@ void main()
     struct coord * p;
     printf("Ola, resolveremos o problema do \"Fecho Convexo\".\nQuantos pontos voce gostaria de entrar? ");
     scanf("%d",&n);
+    if (n<1)//Para evitar comparacoes com o vazio ou lixo.
+    {
+        printf("Voce deve entrar com pelo menos um ponto!");
+        getch();//Para segurar a tela.
+        return;
+    }
     p = (struct coord*)malloc(n*sizeof(struct coord));// Alocacao dinamica para preencher pontos
     for (i=0;i<n;i++)
     {
