@@ -9,16 +9,20 @@ void troca (int* v, int a, int b)//Funcao de troca para o quicksort.
 }
 void quicksort (int *v,int f, int l)//Funcao com o algoritmo de ordenacao quicksort.
 {
-    if(f>=l) return;
+    if(f>=l)
+        return;
     int p=rand()%(l-f+1)+f;
     troca(v,p,f);
     p=f;
     int i=f, j=l;
     while(i<j)
     {
-        while (v[i]<=v[p]&&i<=l) i++;
-        while (v[j]>v[p]) j--;
-        if (j>i) troca(v,i,j);
+        while (v[i]<=v[p]&&i<=l)
+            i++;
+        while (v[j]>v[p])
+            j--;
+        if (j>i)
+            troca(v,i,j);
     }
     troca(v,j,p);
     quicksort(v,f,j-1);
@@ -55,7 +59,8 @@ void unicos (int*v,int n)// funcao que testa a unicidade de elementos, gera uma 
         }
         else
         {
-            while (v[i]==v[i+1]&&i!=n-2) i++;
+            while (v[i]==v[i+1]&&i!=n-2)
+                i++;
         }
    }
    if (v[i]!=v[i-1])//teste especifico para o ultimo da lista
@@ -63,7 +68,8 @@ void unicos (int*v,int n)// funcao que testa a unicidade de elementos, gera uma 
             lista=add(v[i],lista);
             cont++;
         }
-   if (cont==0) printf("Nao foram encontrados valores com somente uma ocorrencia");
+   if (cont==0)
+        printf("Nao foram encontrados valores com somente uma ocorrencia");
    else
    {
        printf("Foram encontrados %d numeros com apenas uma ocorrencia, eles sao:\n",cont);

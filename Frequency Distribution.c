@@ -9,16 +9,20 @@ void troca(int *v, int a, int b)//Funcao de troca que sera usada no quicksort
 }
 void quicksort (int *v,int f, int l)// Funcao com o algorismo de ordenacao quicksort
 {
-    if(f>=l) return;
+    if(f>=l)
+        return;
     int p=rand()%(l-f+1)+f;
     troca(v,p,f);
     p=f;
     int i=f, j=l;
     while(i<j)
     {
-        while (v[i]<=v[p]&&i<=l) i++;
-        while (v[j]>v[p]) j--;
-        if (j>i) troca(v,i,j);
+        while (v[i]<=v[p]&&i<=l)
+            i++;
+        while (v[j]>v[p])
+            j--;
+        if (j>i)
+            troca(v,i,j);
     }
     troca(v,j,p);
     quicksort(v,f,j-1);
@@ -38,7 +42,8 @@ void printnfree2 (int j, struct reps*s)
     printf("O maior numero de repeticoes foi de %d dos seguintes inteiros:\n",j);
     while (s!=NULL)
     {
-        if (s->rep==j) printf("%d\n", s->num);
+        if (s->rep==j)
+            printf("%d\n", s->num);
         temp=s->prox;
         free(s);//Liberacao da lista.
         s=temp;
@@ -51,7 +56,8 @@ void test (struct reps*s) //Funcao que acha o maior numero de repeticoes e o pas
     j=t->rep;
     while (t!=NULL)
     {
-        if ((t->rep)>j) j=t->rep;
+        if ((t->rep)>j)
+            j=t->rep;
         t=t->prox;
     }
     printnfree2 (j,s);

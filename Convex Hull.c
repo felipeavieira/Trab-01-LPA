@@ -7,9 +7,11 @@ struct coord {int x; int y; int fecho};
 int sentido (struct coord a, struct coord b, struct coord c)// Essa funcao dará o sentido de rotacao dos pontos a->b->c.
 {
     int i =(b.y - a.y)*(c.x - b.x)-(b.x - a.x)*(c.y - b.y);
-    if (i<0) return 2;//Anti-horario.
+    if (i<0)
+        return 2;//Anti-horario.
     else
-    if (i>0) return 1;//Horario.
+    if (i>0)
+        return 1;//Horario.
     else return 0;//Colineares.
 }
 void fecho_convexo(struct coord * p,int n)//Acharemos os pontos do fecho.
@@ -25,8 +27,10 @@ void fecho_convexo(struct coord * p,int n)//Acharemos os pontos do fecho.
     }
     for (i = 1; i< n; i++)//Para achar o ponto na extrema esquerda mais a baixo.
     {
-        if (p[i].x < p[k].x)k=i;
-        if (p[i].x==p[k].x&&p[i].y<p[k].y)k=i;
+        if (p[i].x < p[k].x)
+            k=i;
+        if (p[i].x==p[k].x&&p[i].y<p[k].y)
+            k=i;
     }
     j=k;
     do//Acharemos todos os vertices do fecho, pontos nas linhas ou repetidos são ignorados.
@@ -34,7 +38,8 @@ void fecho_convexo(struct coord * p,int n)//Acharemos os pontos do fecho.
         l=(j+1)%n;//Vai para o proximo ponto, volta para o 0 se l for igual a n-1.
         for (i=0;i<n;i++)
         {
-            if (sentido(p[j], p[i], p[l]) == 2)l = i;// Realiza o teste do sentido com todos os pontos.
+            if (sentido(p[j], p[i], p[l]) == 2)
+                l = i;// Realiza o teste do sentido com todos os pontos.
         }
         p[j].fecho=1;//Marca o ponto como vertice
         j=l;
@@ -66,7 +71,8 @@ void main()
     printf("Os pontos do fecho convexo sao:\n");//Imprime os pontos marcados pela funcao fecho_convexo.
     for (i=0;i<n;i++)
     {
-        if (p[i].fecho==1) printf("(%d,%d)\n",p[i].x,p[i].y);
+        if (p[i].fecho==1)
+            printf("(%d,%d)\n",p[i].x,p[i].y);
     }
     free(p);
     getch();//So para segurar a tela.
