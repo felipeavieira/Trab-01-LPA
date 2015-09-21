@@ -1,20 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 struct reps {int num; int rep; struct reps* prox};
-void troca(int *v, int a, int b)//funcao de troca que sera usada no quicksort
+void troca(int *v, int a, int b)//Funcao de troca que sera usada no quicksort
 {
     int temp=v[a];
     v[a]=v[b];
     v[b]=temp;
 }
-void quicksort (int *v,int f, int l)// funcao com o algorismo de ordenacao quicksort
+void quicksort (int *v,int f, int l)// Funcao com o algorismo de ordenacao quicksort
 {
     if(f>=l) return;
     int p=rand()%(l-f+1)+f;
     troca(v,p,f);
     p=f;
-    int i=f;
-    int j=l;
+    int i=f, j=l;
     while(i<j)
     {
         while (v[i]<=v[p]&&i<=l) i++;

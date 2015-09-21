@@ -12,8 +12,7 @@ void quicksort (int *v,int f, int l)// Funcao com o algoritmo de ordenacao quick
     int p=rand()%(l-f+1)+f;
     troca(v,p,f);
     p=f;
-    int i=f;
-    int j=l;
+    int i=f, j=l;
     while(i<j)
     {
         while (v[i]<=v[p]&&i<=l) i++;

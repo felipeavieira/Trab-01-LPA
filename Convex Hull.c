@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 /* Esse programa funciona achando o ponto na extrema esquerda mais para baixo, que com certeza estara no fecho,
-e entao rotacionando para achar os vertices do fecho, ate chegarmos no inicio novamente*/
+e entao rotacionando no sentido anti-horario para achar os vertices do fecho, ate chegarmos no inicio novamente.
+Os vertices são encontrados testando o sentido de rotação no sentido ponto do fecho-> qualquer ponto -> ponto a ser testado.*/
 struct coord {int x; int y; int fecho};
-int sentido (struct coord a, struct coord b, struct coord c)// essa funcao dará o sentido de rotacao dos pontos a->b->c.
+int sentido (struct coord a, struct coord b, struct coord c)// Essa funcao dará o sentido de rotacao dos pontos a->b->c.
 {
     int i =(b.y - a.y)*(c.x - b.x)-(b.x - a.x)*(c.y - b.y);
     if (i<0) return 2;//Anti-horario.
@@ -13,7 +14,7 @@ int sentido (struct coord a, struct coord b, struct coord c)// essa funcao dará 
 }
 void fecho_convexo(struct coord * p,int n)//Acharemos os pontos do fecho.
 {
-    int i,j,k=0,l; //O k foi inicializado pois sera a posicao inicial do ponto extremo
+    int i,j,k=0,l; //O k foi inicializado pois sera a posicao inicial do ponto extremo.
     if (n<3)//Não teremos um poligono, entao todos os pontos estao no fecho.
     {
         for (i=0;i<n;i++)
@@ -33,7 +34,7 @@ void fecho_convexo(struct coord * p,int n)//Acharemos os pontos do fecho.
         l=(j+1)%n;//Vai para o proximo ponto, volta para o 0 se l for igual a n-1.
         for (i=0;i<n;i++)
         {
-            if (sentido(p[j], p[i], p[l]) == 2)l = i;
+            if (sentido(p[j], p[i], p[l]) == 2)l = i;// Realiza o teste do sentido com todos os pontos.
         }
         p[j].fecho=1;//Marca o ponto como vertice
         j=l;
