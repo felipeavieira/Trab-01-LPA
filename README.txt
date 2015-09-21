@@ -22,7 +22,8 @@ Code::Blocks, versão 13.12 rev 9501 gcc 4.7.1 Windows/unicode - 32bit.
 
 Linker settings: -static-libgcc -static-libstdc++
 
-1.4. Em todos os programas foram usadas duas bibliotecas: stdio.h e stdlib.h.
+1.4. Em todos os programas foram usadas duas bibliotecas: stdio.h e stdlib.h. No programa do fecho convexo,
+foi utilizada, além da já citadas, a biblioteca math.h (para a função sqrt).
 
 2. Tutorial: como compilar o código
 
@@ -66,9 +67,11 @@ retornará o maior número de repetições e quais elementos que tiveram esse número
 
 3.5. Convex Hull
 
-Esse programa tem como objetivo encontrar, entre diversos pontos inseridos em um plano cartesiano, quais seriam
-os vértice de um polígono convexo que contenha todos os pontos inseridos e tenha a menor área possível. É importante 
-lembrar que o programa encontra somente os vertices, se um ponto for colinear a dois vertices e estiver entre eles,
-ele não aparecerá na saída do programa.
-Para iniciar entre com o número de inteiros que deseja inserir. Preencha as coordenadas x e y de cada ponto, e o
-programa retonará os pontos que são os vértices do polígono convexo formado.
+Esse programa tem como objetivo encontrar, entre diversos pontos inseridos em um plano cartesiano, 
+quais seriam os vértice de um polígono convexo que contenha todos os pontos inseridos e tenha a menor
+área possível. É importante lembrar que o programa encontra somente os vertices, portanto se um ponto 
+for colinear a dois vertices e estiver entre eles, ele não aparecerá na saída do programa.
+Para iniciar entre com o número de inteiros que deseja inserir. Preencha as coordenadas x e y de cada ponto,
+sem repetir pontos, e o programa retonará os pontos que são os vértices do polígono convexo formado. 
+No caso de repetição de pontos, o programa geralmente só imprime o ponto novamente, ou o ignora,
+mas existem alguns casos que ele poderá entrar em um looping infinito. Ou seja, melhor não repetir.
