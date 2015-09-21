@@ -1,4 +1,4 @@
-# Windows image file caches
+﻿# Windows image file caches
 Thumbs.db
 ehthumbs.db
 
@@ -43,4 +43,3 @@ Temporary Items
 .apdisk
 Entrada e ordenação quicksort.o
 Exercício 01.o
-*.o

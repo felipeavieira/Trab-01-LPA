@@ -79,7 +79,7 @@ void unicos (int*v,int n)// funcao que testa a unicidade de elementos, gera uma 
 void main()
 {
     int *v,n,i;
-    printf("Ola, quantos valores voce pretende entrar? ");
+    printf("Ola, iremos encontrar elementos unicos. So use inteiros nesse programa.\nQuantos valores voce pretende entrar? ");
     scanf("%d",&n);
     if (n<1)//Para evitar comparacoes com o vazio ou lixo.
     {

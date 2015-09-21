@@ -48,7 +48,7 @@ void pares(int *v, int n) //Compara, encontra menor diferenca e imprime.
 void main()
 {
     int *v,n,i;
-    printf("Ola, quantos valores voce pretende entrar? ");
+    printf("Ola, vamos achar o par mais proximo. So use inteiros nesse programa.\nQuantos valores voce pretende entrar? ");
     scanf("%d",&n);
     if (n<2) // Para evitar comparacoes com vazio ou lixo.
     {

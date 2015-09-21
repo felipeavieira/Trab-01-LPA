@@ -50,7 +50,7 @@ void main()
 {
     int n, i;
     struct coord * p;
-    printf("Ola, resolveremos o problema do \"Fecho Convexo\".\nQuantos pontos voce gostaria de entrar? ");
+    printf("Ola, resolveremos o problema do \"Fecho Convexo\". So use inteiros nesse programa.\nQuantos pontos voce gostaria de entrar? ");
     scanf("%d",&n);
     if (n<1)//Para evitar comparacoes com o vazio ou lixo.
     {
