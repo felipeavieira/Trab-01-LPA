@@ -3,7 +3,7 @@
 #include <math.h>
 /* Esse programa funciona achando o ponto na extrema esquerda mais para baixo, que com certeza estara no fecho,
 e entao rotacionando no sentido anti-horario para achar os vertices do fecho, ate chegarmos no inicio novamente.
-Os vertices são encontrados testando o sentido de rotação no sentido ponto do fecho-> qualquer ponto -> ponto a ser testado.*/
+Os vertices são encontrados testando o sentido de rotação no sentido (ponto do fecho)->(qualquer ponto)->(ponto a ser testado).*/
 struct coord {int x; int y; int fecho};
 int dist (struct coord p, struct coord a, struct coord b, int na, int nb)
 {//Essa funcao dara qual ponto esta mais proximo de p. Isso servira para quando os pontos forem colineares, ele pegara só o mais distante.
@@ -25,14 +25,6 @@ int sentido (struct coord a, struct coord b, struct coord c)// Essa funcao dará 
 void fecho_convexo(struct coord * p,int n)//Acharemos os pontos do fecho.
 {
     int i,j,k=0,l; //O k foi inicializado pois sera a posicao inicial do ponto extremo.
-    if (n<3)//Não teremos um poligono, entao todos os pontos estao no fecho.
-    {
-        for (i=0;i<n;i++)
-        {
-            p[i].fecho=1;
-        }
-        return;
-    }
     for (i = 1; i< n; i++)//Para achar o ponto na extrema esquerda mais a baixo.
     {
         if (p[i].x < p[k].x)
@@ -63,9 +55,9 @@ void main()
     struct coord * p;
     printf("Ola, resolveremos o problema do \"Fecho Convexo\". So use inteiros nesse programa e nao repita pontos.\nQuantos pontos voce gostaria de entrar? ");
     scanf("%d",&n);
-    if (n<1)//Para evitar comparacoes com o vazio ou lixo.
+    if (n<3)//Um poligono precisa ter tres pontos no minimo!!
     {
-        printf("Voce deve entrar com pelo menos um ponto!");
+        printf("Voce deve entrar com pelo menos tres pontos para formar um poligono!");
         getch();//Para segurar a tela.
         return;
     }
