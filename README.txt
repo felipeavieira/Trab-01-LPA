@@ -2,7 +2,8 @@
 Os programas nesta pasta foram elaborados para a disciplina de linguagens de programação e Aplicações,
 do curso de Engenharia Mecânica da Escola de Engenharia de São Carlos - EESC/USP
 
-Autor: 	Felipe de Alemida Vieira - Nº USP: 9312686 - GitHub User Name: felipeavieira
+Autores:	Felipe de Alemida Vieira - Nº USP: 9312686 - GitHub User Name: felipeavieira
+		Tiago Foloni Tessarolli - Nº USP: 9312794 - GitHub User Name: tiagoftessarolli
 
 Índice
 
@@ -45,8 +46,7 @@ código fonte. Agora você poderá usar somente o executável, sem a necessidade de 
 3.1. Regras gerais
 Todos os programas desse diretório utilizam somente números inteiros. Caso seja inserido um valor de tipo
 diferente, isso poderá ocasionar erros e instabilidade. Então use inteiros, sempre!
-Pode ser inserido qualquer inteiro, desde que dentro do limite máximo e mínimo suportado pelo sistema, que
-é de 2147483627 e -2147483628, respectivamente. Caso em alguma ocasião exista outra limitação, o programa irá
+Pode ser inserido qualquer inteiro. Caso em alguma ocasião exista outra limitação, o programa irá
 informa-la.
 Todos os programas, após exibir os resultados, irá manter a tela até que seja precionada um tecla qualquer,
 então tome cuidado para não perder os resultados por apertar uma tecla sem querer.
@@ -69,7 +69,7 @@ um número e apertando enter e o programa retornará os elementos que aparecem uma
 
 Esse programa tem como objetivo encontrar os elementos que ocorrem o maior número de vezes.
 Para iniciar, entre com o número de inteiros que deseja inserir, sendo n>=1. Preencha as posições, digitando
-um número e apertando enter e o programaretornará o maior número de repetições e quais elementos que tiveram
+um número e apertando enter, e o programa retornará o maior número de repetições e quais elementos que tiveram
 esse número de repetições.
 
 3.5. Convex Hull
@@ -78,8 +78,8 @@ Esse programa tem como objetivo encontrar, entre diversos pontos inseridos em um
 quais seriam os vértice de um polígono convexo que contenha todos os pontos inseridos e tenha a menor
 área possível. É importante lembrar que o programa encontra somente os vertices, portanto se um ponto 
 for colinear a dois vertices e estiver entre eles, ele não aparecerá na saída do programa.
-Para iniciar entre com o número de inteiros que deseja inserir, sendo n>=3. Preencha as coordenadas x e y 
-de cada ponto, sem repetir pontos, e o programa retonará os pontos que são os vértices do polígono convexo
-formado. 
+Para iniciar entre com o número de inteiros que deseja inserir, sendo n>=3. Entre com as coordenadas x e y 
+de cada ponto, usando o modelo "x y", sem as aspas, sem repetir pontos, e o programa retonará os pontos que
+são os vértices do polígono convexo formado. 
 No caso de repetição de pontos, o programa geralmente só imprime o ponto novamente, ou o ignora,
 mas existem alguns casos que ele poderá entrar em um looping infinito. Ou seja, melhor não repetir.
