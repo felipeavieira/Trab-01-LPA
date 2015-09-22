@@ -43,7 +43,7 @@ void printnfree2 (int j, struct reps*s)
     while (s!=NULL)
     {
         if (s->rep==j)
-            printf("%d\n", s->num);
+            printf("%d\t", s->num);
         temp=s->prox;
         free(s);//Liberacao da lista.
         s=temp;
