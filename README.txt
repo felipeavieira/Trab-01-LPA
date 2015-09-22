@@ -27,7 +27,8 @@ foi utilizada, além da já citadas, a biblioteca math.h. As bibliotecas estão loc
 no repositório do trabalho.
 
 1.5. Alguns exemplos de entrada foram dados, e estão localizados na pasta "Entradas-exemplo". Eles estão no
-formato .txt.
+formato .txt. As entradas com nome "Entrada - X.txt" podem ser usadas para o exercício 1,2 e 3. As entradas com
+nome "Entrada - Complex hullX.txt" são entradas para o programa "Convex Hull"
 
 1.6. Os códigos fonte (.c) e executáveis (.exe) de todos os quatro programas estão no repositório do trabalho.
 
@@ -76,7 +77,7 @@ esse número de repetições.
 
 Esse programa tem como objetivo encontrar, entre diversos pontos inseridos em um plano cartesiano, 
 quais seriam os vértice de um polígono convexo que contenha todos os pontos inseridos e tenha a menor
-área possível. É importante lembrar que o programa encontra somente os vertices, portanto se um ponto 
+área possível. É importante lembrar que o programa encontra somente os vertices, portanto, se um ponto 
 for colinear a dois vertices e estiver entre eles, ele não aparecerá na saída do programa.
 Para iniciar entre com o número de inteiros que deseja inserir, sendo n>=3. Entre com as coordenadas x e y 
 de cada ponto, usando o modelo "x y", sem as aspas, sem repetir pontos, e o programa retonará os pontos que
