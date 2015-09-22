@@ -70,12 +70,11 @@ void main()
         return;
     }
     p = (struct coord*)malloc(n*sizeof(struct coord));// Alocacao dinamica para preencher pontos
+    printf("Entre com os pontos no formato \"x y\", sem as aspas. Nao esqueca do espaco!\n");
     for (i=0;i<n;i++)
     {
-        printf("Ponto %d\nCoordenada x: ",i);
-        scanf("%d",&p[i].x);
-        printf("Coordenada y: ",i);
-        scanf("%d",&p[i].y);
+        printf("Ponto %d: ",i);
+        scanf("%d %d",&p[i].x, &p[i].y);
         p[i].fecho=0;//Inicializa a marcacao de presente ou nao no fecho.
     }
     fecho_convexo(p,n);
