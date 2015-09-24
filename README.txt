@@ -14,9 +14,9 @@ Autores:	Felipe de Almeida Vieira - Nº USP: 9312686 - GitHub User Name: felipeav
 1. Ambiente de trabalho e conteúdo
 
 1.1. Os códigos fonte (.c) foram escritos e compilados no ambiente de desenvolvimento integrado (IDE)
-Code::Blocks, versão 13.12 rev 9501 gcc 4.7.1 Windows/unicode - 32bit.
+Code::Blocks, versão 13.12 rev 9501.
 
-1.2. O compilador dos executáveis (.exe) foi o mingw32-gcc.exe.
+1.2. O compilador dos executáveis (.exe) foi o mingw32-gcc.exe, gcc 4.7.1 Windows/unicode - 32bit.
 
 1.3. Foram utilizados os seguintes parâmetros de compilação:
 
@@ -49,7 +49,7 @@ Todos os programas desse diretório utilizam somente números inteiros. Caso seja 
 diferente, isso poderá ocasionar erros e instabilidade. Então use inteiros, sempre!
 Pode ser inserido qualquer inteiro. Caso em alguma ocasião exista outra limitação, o programa irá
 informa-la.
-Todos os programas, após exibir os resultados, irá manter a tela até que seja precionada um tecla qualquer,
+Todos os programas, após exibir os resultados, irá manter a tela até que seja pressionada um tecla qualquer,
 então tome cuidado para não perder os resultados por apertar uma tecla sem querer.
 
 3.2. Closest Pair
