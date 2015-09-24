@@ -42,7 +42,7 @@ void fecho_convexo(struct coord * p,int n)//Acharemos os pontos do fecho.
                     l = dist(p[j],p[i],p[l],i,l);// Se forem colineares, a funcao dará o mais distante.
                     else
                         if (sentido(p[j], p[i], p[l]) == 2)
-                            l = i;// Realiza o teste do sentido com todos os pontos.
+                            l = i;// Realiza o teste do sentido com todos os pontos. Se o sentido nunca for anti-horario, o ponto esta no fecho.
         }
         p[j].fecho=1;//Marca o ponto como vertice
         j=l;
