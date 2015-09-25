@@ -13,8 +13,8 @@ Autores:	Felipe de Almeida Vieira - Nº USP: 9312686 - GitHub User Name: felipeav
 
 1. Ambiente de trabalho e conteúdo
 
-1.1. Os códigos fonte (.c) foram escritos e compilados no ambiente de desenvolvimento integrado (IDE)
-Code::Blocks, versão 13.12 rev 9501.
+1.1. Os códigos fonte dos programas em c (.c) foram escritos e compilados no ambiente de desenvolvimento 
+integrado (IDE) Code::Blocks, versão 13.12 rev 9501.
 
 1.2. O compilador dos executáveis (.exe) foi o mingw32-gcc.exe, gcc 4.7.1 Windows/unicode - 32bit.
 
